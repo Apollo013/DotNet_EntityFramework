@@ -51,6 +51,12 @@ namespace Repositories.Base
             _dbSet.Remove(entity);
         }
 
+        public void Remove(int id)
+        {
+            var entity = FindByKey(id);
+            _dbSet.Remove(entity);
+        }
+
         public void Update(TEntity entity)
         {
             _dbSet.Attach(entity);
