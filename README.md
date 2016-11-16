@@ -1,4 +1,4 @@
-# DotNet_EntityFramework_GenericRepository
+# DotNet_EntityFramework
 
 ---
 
