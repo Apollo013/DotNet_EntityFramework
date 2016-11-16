@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DotNet_GenericRepository")]
+[assembly: AssemblyTitle("UnitTesting")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard Company")]
-[assembly: AssemblyProduct("DotNet_GenericRepository")]
+[assembly: AssemblyProduct("UnitTesting")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8b6b68de-1b38-47cb-b490-0c95bb1ddc4d")]
+[assembly: Guid("84a0baf8-e0d3-4ec2-b62a-94daf1fcf975")]
 
 // Version information for an assembly consists of the following four values:
 //
