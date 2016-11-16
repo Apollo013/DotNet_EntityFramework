@@ -2,7 +2,7 @@
 
 ---
 
-A quick look at EF, generic repository pattern, eager loading, expression building, lambda's, non-tracking queries &amp; unit testing.
+A look at EF using the generic repository pattern, eager loading, expression building, lambda's, non-tracking queries & unit testing.
 
 ---
 
