@@ -64,6 +64,7 @@
     <Compile Include="CustomerTesting\WhenFindingASingleCustomer.cs" />
     <Compile Include="CustomerTesting\WhenFindingCustomers.cs" />
     <Compile Include="CustomerTesting\WhenGettingAllCustomers.cs" />
+    <Compile Include="CustomerViewTesting\WhenGettingCustomersFromCustomerView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

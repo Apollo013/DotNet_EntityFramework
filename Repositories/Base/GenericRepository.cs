@@ -41,23 +41,23 @@ namespace Repositories.Base
         #endregion
 
         #region 'IGenericWriteableRepository' implementations
-        public void Insert(TEntity entity)
+        public virtual void Insert(TEntity entity)
         {
             _dbSet.Add(entity);
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             _dbSet.Remove(entity);
         }
 
-        public void Remove(int id)
+        public virtual void Remove(int id)
         {
             var entity = FindByKey(id);
             _dbSet.Remove(entity);
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;

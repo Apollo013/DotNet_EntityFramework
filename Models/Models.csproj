@@ -43,6 +43,7 @@
     <Compile Include="Base\BaseEntity.cs" />
     <Compile Include="Base\Entity.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesOrder.cs" />
   </ItemGroup>

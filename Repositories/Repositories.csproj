@@ -49,12 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\GenericReadableRepository.cs" />
     <Compile Include="Base\GenericRepository.cs" />
     <Compile Include="Base\IGenericReadableIncludingRepository.cs" />
     <Compile Include="Base\IGenericRepository.cs" />
     <Compile Include="Base\IGenericReadableRepository.cs" />
     <Compile Include="Base\IGenericWriteableRepository.cs" />
     <Compile Include="CustomerRepository.cs" />
+    <Compile Include="CustomerViewRepository.cs" />
     <Compile Include="Extensions\ExpressionBuilderExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,6 +9,7 @@ namespace DataAccess.Contexts
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<SalesOrder> SalesOrders { get; set; }
+        public DbSet<CustomerView> CustomerView { get; set; }
 
         public ApplicationContext() : base("name=DefaultConnection")
         {
@@ -18,6 +19,9 @@ namespace DataAccess.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // Customer View
+            modelBuilder.Entity<CustomerView>().HasKey(cv => cv.Id).ToTable("CustomerView", "dbo");
+
             // Customer
             modelBuilder.Entity<Customer>().HasKey(c => c.Id);
             modelBuilder.Entity<Customer>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
