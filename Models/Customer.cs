@@ -18,6 +18,8 @@ namespace Models
 
         public DateTime CreateDate { get; private set; } = DateTime.Now;
 
+        public Address Address { get; set; }
+
         public ICollection<SalesOrder> SalesOrders { get; private set; } = new List<SalesOrder>();
 
         private Customer() { }

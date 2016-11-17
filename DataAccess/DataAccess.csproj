@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\ApplicationContext.cs" />
+    <Compile Include="EntityConfigurations\AddressConfiguration.cs" />
+    <Compile Include="EntityConfigurations\CustomerConfiguration.cs" />
+    <Compile Include="EntityConfigurations\CustomerViewConfiguration.cs" />
+    <Compile Include="EntityConfigurations\SalesOrderConfiguration.cs" />
     <Compile Include="Migrations\201611161415282_InitialCreate.cs" />
     <Compile Include="Migrations\201611161415282_InitialCreate.Designer.cs">
       <DependentUpon>201611161415282_InitialCreate.cs</DependentUpon>
@@ -57,6 +61,14 @@
     <Compile Include="Migrations\201611162047198_CreateCustomerView.cs" />
     <Compile Include="Migrations\201611162047198_CreateCustomerView.Designer.cs">
       <DependentUpon>201611162047198_CreateCustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611170720038_IntroducedConfiurationClassesAndChangedSchemas.cs" />
+    <Compile Include="Migrations\201611170720038_IntroducedConfiurationClassesAndChangedSchemas.Designer.cs">
+      <DependentUpon>201611170720038_IntroducedConfiurationClassesAndChangedSchemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611170741403_AddedAddress.cs" />
+    <Compile Include="Migrations\201611170741403_AddedAddress.Designer.cs">
+      <DependentUpon>201611170741403_AddedAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611162047198_CreateCustomerView.resx">
       <DependentUpon>201611162047198_CreateCustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611170720038_IntroducedConfiurationClassesAndChangedSchemas.resx">
+      <DependentUpon>201611170720038_IntroducedConfiurationClassesAndChangedSchemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611170741403_AddedAddress.resx">
+      <DependentUpon>201611170741403_AddedAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

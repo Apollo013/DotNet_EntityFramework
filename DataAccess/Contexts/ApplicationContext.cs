@@ -1,13 +1,13 @@
-﻿using Models;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using DataAccess.EntityConfigurations;
+using Models;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure.Annotations;
 
 namespace DataAccess.Contexts
 {
     public class ApplicationContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         public DbSet<SalesOrder> SalesOrders { get; set; }
         public DbSet<CustomerView> CustomerView { get; set; }
 
@@ -19,39 +19,15 @@ namespace DataAccess.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Customer View
-            modelBuilder.Entity<CustomerView>().HasKey(cv => cv.Id).ToTable("CustomerView", "dbo");
+            // Tables
+            modelBuilder.Configurations.Add(new CustomerConfiguration());
+            modelBuilder.Configurations.Add(new AddressConfiguration());
+            modelBuilder.Configurations.Add(new SalesOrderConfiguration());
 
-            // Customer
-            modelBuilder.Entity<Customer>().HasKey(c => c.Id);
-            modelBuilder.Entity<Customer>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Customer>().Property(c => c.Name).IsRequired().HasMaxLength(50);
-            modelBuilder.Entity<Customer>().Property(c => c.HomeEmail)
-                                           .IsRequired().HasMaxLength(50)
-                                           .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                                                                new IndexAnnotation(
-                                                                new IndexAttribute("UQX_CustomerEmail") { IsUnique = true }));
+            // Views
+            modelBuilder.Configurations.Add(new CustomerViewConfiguration());
 
-            // Sales Order
-            modelBuilder.Entity<SalesOrder>().HasKey(o => o.Id);
-            modelBuilder.Entity<SalesOrder>().Property(o => o.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<SalesOrder>().Property(o => o.OrderDate).IsRequired();
-
-            modelBuilder.Entity<SalesOrder>().Property(o => o.CustomerId)
-                                             .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                                                                  new IndexAnnotation(
-                                                                  new IndexAttribute("UQX_CustomerSalesOrder") { IsUnique = true, Order = 1 }));
-
-            modelBuilder.Entity<SalesOrder>().Property(o => o.Id)
-                                             .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                                                                  new IndexAnnotation(
-                                                                  new IndexAttribute("UQX_CustomerSalesOrder") { IsUnique = true, Order = 2 }));
-
-            modelBuilder.Entity<SalesOrder>().HasRequired(o => o.Customer)
-                                             .WithMany(c => c.SalesOrders)
-                                             .HasForeignKey(o => new { o.CustomerId })
-                                             .WillCascadeOnDelete(false);
-
+            // Base
             base.OnModelCreating(modelBuilder);
         }
     }
