@@ -7,7 +7,7 @@ namespace DataAccess.Migrations
         public override void Up()
         {
             Sql(
-                @"CREATE VIEW dbo.CustomerView
+                @"CREATE VIEW Sales.CustomerView
                  AS
                  SELECT Id, Name, WorkEmail, WorkPhone FROM dbo.Customers"
             );
@@ -15,7 +15,7 @@ namespace DataAccess.Migrations
 
         public override void Down()
         {
-            Sql("DROP VIEW dbo.CustomerView");
+            Sql("DROP VIEW Sales.CustomerView");
         }
     }
 }

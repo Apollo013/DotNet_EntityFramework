@@ -32,14 +32,29 @@ namespace Models
             WorkPhone = workPhone;
         }
 
+        private Customer(string name, string homeEmail, string homePhone, string workEmail, string workPhone, Address address) : this(name, homeEmail, homePhone, workEmail, workPhone)
+        {
+            Address = address;
+        }
+
         public static Customer Create(string name, string homeEmail, string homePhone, string workEmail, string workPhone)
         {
             return new Customer(name, homeEmail, homePhone, workEmail, workPhone);
         }
 
+        public static Customer Create(string name, string homeEmail, string homePhone, string workEmail, string workPhone, Address address)
+        {
+            return new Customer(name, homeEmail, homePhone, workEmail, workPhone, address);
+        }
+
         public void AddSalesOrder(SalesOrder order)
         {
             SalesOrders.Add(order);
+        }
+
+        public void ChangeHomeEmail(string email)
+        {
+            HomeEmail = email;
         }
     }
 }

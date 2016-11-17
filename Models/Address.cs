@@ -12,5 +12,21 @@ namespace Models
 
         //public int CustomerId { get; set; }
         public Customer Customer { get; set; }
+
+        private Address() { }
+
+        private Address(string street, string city, string county, string country, string postalCode)
+        {
+            Street = street;
+            City = city;
+            County = county;
+            Country = country;
+            PostalCode = postalCode;
+        }
+
+        public static Address Create(string street, string city, string county, string country, string postalCode)
+        {
+            return new Address(street, city, county, country, postalCode);
+        }
     }
 }
