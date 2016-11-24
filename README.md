@@ -2,7 +2,7 @@
 
 ---
 
-A look at EF using the generic repository pattern, migrations, navigation properties, configuration files, seeding, creating views, eager loading, expression building, lambda's, non-tracking queries & unit testing.
+A look at EF, migrations, navigation properties, constraints, configuration files, seeding, creating views, eager loading, expression building, lambda's, non-tracking queries, generic repository pattern & unit testing.
 
 ---
 
